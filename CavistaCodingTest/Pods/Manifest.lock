@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.2.1)
+  - GRDB.swift (5.0.0-beta.6):
+    - GRDB.swift/standard (= 5.0.0-beta.6)
+  - GRDB.swift/standard (5.0.0-beta.6)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - GRDB.swift (= 5.0.0-beta.6)
+  - Kingfisher (~> 5.14)
+  - SnapKit (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - GRDB.swift
+    - Kingfisher
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  GRDB.swift: 0f3bce35784c6bb9ca6d7f7f6ffa475c3f42cf8f
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 7944cdce711b4f97f912848e6cc4e4a5ea667704
+
+COCOAPODS: 1.9.3
