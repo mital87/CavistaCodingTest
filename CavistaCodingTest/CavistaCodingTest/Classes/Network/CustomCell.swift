@@ -10,6 +10,8 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
+    //MARK: - Variables & Properties
+    
     static var cellIdentifier = "CustomCell"
     var cellData : AxxessTech!
     
@@ -123,6 +125,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
+    //MARK: - UITableViewCell Initialization
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -131,9 +135,9 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - UserDefine Methods
+    
     func setupCustomCell() {
-
-        debugPrint(self.cellData as Any)
         
         if let id = self.cellData.id {
             lblID.text = "Id: "

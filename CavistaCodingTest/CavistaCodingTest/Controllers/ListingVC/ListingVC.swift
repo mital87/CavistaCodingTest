@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class ListingVC: UIViewController {
 
@@ -25,6 +26,56 @@ class ListingVC: UIViewController {
         return tbl
     }()
     
+    lazy var imgViewer : UIView = {
+        let view = CustomView()
+        view.backgroundColor = .white
+        view.refreshCorners(cornerValue: 20)
+        view.refreshShadowColor(shadowColor: .black)
+        view.refreshShadowRadius(shadowRadius: 5)
+        view.refreshShadowOpacity(shadowOpacity: 0.6)
+        self.view.addSubview(view)
+
+        view.snp.makeConstraints { (make) in
+            make.top.equalTo(tblView.snp.topMargin)
+            make.left.equalTo(20)
+            make.bottom.right.equalTo(-20)
+        }
+        return view
+    }()
+    
+    lazy var btnCloseViewer : UIButton = {
+        let btn = UIButton()
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .red
+        btn.layer.cornerRadius = 20
+        btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(btnCancelClicked), for: .touchUpInside)
+        
+        imgViewer.addSubview(btn)
+        
+        btn.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
+            make.right.equalTo(-10)
+            make.size.equalTo(40)
+        }
+        return btn
+    }()
+    
+    lazy var displayImgView : UIImageView = {
+        let imgView = UIImageView()
+        imgView.contentMode = .scaleAspectFit
+        imgViewer.addSubview(imgView)
+
+        imgView.snp.makeConstraints { (make) in
+            make.top.equalTo(btnCloseViewer.snp.bottom).offset(10)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(-10)
+        }
+        return imgView
+    }()
+        
+    
     var dataArray = [AxxessTech]()
     
     override func viewDidLoad() {
@@ -37,6 +88,11 @@ class ListingVC: UIViewController {
             AxxessTech.truncateTable(db)
         }
         importDataForAxxessTechAPI()
+        
+    }
+    
+    @objc func btnCancelClicked() {
+        imgViewer.isHidden = true
     }
 }
 
@@ -62,9 +118,28 @@ extension ListingVC : UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let data = dataArray[indexPath.row]
+        if data.type == "image" {
+            imgViewer.isHidden = false
+            btnCloseViewer.setTitle("X", for: .normal)
+            debugPrint(data.data ?? "")
+            displayImgView.kf.indicatorType = .activity
+            
+            displayImgView.kf.setImage(with: URL(string: data.data ?? "")){ (result) in
+                switch result {
+                case .success(let value):
+                    self.displayImgView.image = value.image
+                case .failure:
+                    self.displayImgView.image = UIImage(named: "No_Image")
+                }
+            }
+        }
+    }
 }
 
-    
 //MARK:- Products Group API Manager
 extension ListingVC {
     func importDataForAxxessTechAPI() {
@@ -74,7 +149,7 @@ extension ListingVC {
             if error == nil {
                 
                 DatabaseManager.getSharedCurrentDatabase { (db) in
-                    if let sampleData = AxxessTech.getSampleData(db, "") {
+                    if let sampleData = AxxessTech.getSampleData(db) {
                         self.dataArray = sampleData
                         self.tblView.reloadData()
                     }
