@@ -28,7 +28,7 @@ class ListingVC: UIViewController {
     
     lazy var imgViewer : UIView = {
         let view = CustomView()
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.appBGColor
         view.refreshCorners(cornerValue: 20)
         view.refreshShadowColor(shadowColor: .black)
         view.refreshShadowRadius(shadowRadius: 5)
@@ -43,10 +43,9 @@ class ListingVC: UIViewController {
         return view
     }()
     
-    lazy var btnCloseViewer : UIButton = {
-        let btn = UIButton()
+    lazy var btnCloseViewer : CancelStyleButton = {
+        let btn = CancelStyleButton()
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .red
         btn.layer.cornerRadius = 20
         btn.clipsToBounds = true
         btn.addTarget(self, action: #selector(btnCancelClicked), for: .touchUpInside)
@@ -145,7 +144,6 @@ extension ListingVC : UITableViewDataSource, UITableViewDelegate  {
         if data.type == "image" {
             imgViewer.isHidden = false
             btnCloseViewer.setTitle("X", for: .normal)
-            debugPrint(data.data ?? "")
             displayImgView.kf.indicatorType = .activity
             
             displayImgView.kf.setImage(with: URL(string: data.data ?? "")){ (result) in

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try DatabaseManager.setupDatabase(application)
         } catch  {
-            print(error.localizedDescription)
+            debugPrint(error.localizedDescription)
         }
         debugPrint(getDocumentsDirectory())
         
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try self.reachability.startNotifier()
         }
         catch {
-            print("Unable to start notifier")
+            debugPrint("Unable to start notifier")
         }
     }
 }

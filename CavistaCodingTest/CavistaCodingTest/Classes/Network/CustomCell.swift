@@ -15,9 +15,8 @@ class CustomCell: UITableViewCell {
     static var cellIdentifier = "CustomCell"
     var cellData : AxxessTech!
     
-    lazy var lblID : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblID : HeaderStyleLabel = {
+        let lbl = HeaderStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -27,9 +26,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblIDVal : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblIDVal : ContentStyleLabel = {
+        let lbl = ContentStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -40,9 +38,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblType : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblType : HeaderStyleLabel = {
+        let lbl = HeaderStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -53,9 +50,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblTypeVal : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblTypeVal : ContentStyleLabel = {
+        let lbl = ContentStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -69,9 +65,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblDate : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblDate : HeaderStyleLabel = {
+        let lbl = HeaderStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -82,9 +77,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblDateVal : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblDateVal : ContentStyleLabel = {
+        let lbl = ContentStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -98,9 +92,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblData : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblData : HeaderStyleLabel = {
+        let lbl = HeaderStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in
@@ -111,9 +104,8 @@ class CustomCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var lblDataVal : UILabel = {
-        let lbl = UILabel()
-        lbl.numberOfLines = 0
+    lazy var lblDataVal : ContentStyleLabel = {
+        let lbl = ContentStyleLabel()
         
         self.addSubview(lbl)
         lbl.snp.makeConstraints { (make) in

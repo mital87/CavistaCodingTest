@@ -20,6 +20,8 @@
 		3B9F8DB724B34D8700183B7A /* AxxessTechApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DB624B34D8700183B7A /* AxxessTechApiManager.swift */; };
 		3B9F8DBA24B3824C00183B7A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DB924B3824C00183B7A /* CustomCell.swift */; };
 		3B9F8DBD24B47F4B00183B7A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DBC24B47F4B00183B7A /* CustomView.swift */; };
+		3B9F8DC024B4994E00183B7A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DBF24B4994E00183B7A /* CustomLabel.swift */; };
+		3B9F8DC324B49C4300183B7A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DC224B49C4300183B7A /* CustomButton.swift */; };
 		F5BB9118D104B7A4F16BDB41 /* Pods_CavistaCodingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9889DCBA7DB9E61BB469E2A9 /* Pods_CavistaCodingTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		3B9F8DB624B34D8700183B7A /* AxxessTechApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxxessTechApiManager.swift; sourceTree = "<group>"; };
 		3B9F8DB924B3824C00183B7A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = CavistaCodingTest/Classes/Network/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		3B9F8DBC24B47F4B00183B7A /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomView.swift; path = CavistaCodingTest/Classes/Network/CustomView.swift; sourceTree = SOURCE_ROOT; };
+		3B9F8DBF24B4994E00183B7A /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		3B9F8DC224B49C4300183B7A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9889DCBA7DB9E61BB469E2A9 /* Pods_CavistaCodingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CavistaCodingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,8 @@
 		3B9F8D9724B32B1D00183B7A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3B9F8DC124B49C2900183B7A /* CustomButton */,
+				3B9F8DBE24B4992200183B7A /* CustomLabel */,
 				3B9F8DBB24B47F3400183B7A /* CustomView */,
 				3B9F8DB824B3821A00183B7A /* UITableViewCell */,
 				3B9F8DAF24B347EA00183B7A /* Network */,
@@ -181,6 +187,22 @@
 				3B9F8DBC24B47F4B00183B7A /* CustomView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		3B9F8DBE24B4992200183B7A /* CustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F8DBF24B4994E00183B7A /* CustomLabel.swift */,
+			);
+			path = CustomLabel;
+			sourceTree = "<group>";
+		};
+		3B9F8DC124B49C2900183B7A /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F8DC224B49C4300183B7A /* CustomButton.swift */,
+			);
+			path = CustomButton;
 			sourceTree = "<group>";
 		};
 		74EED8377A80091DA6837774 /* Pods */ = {
@@ -314,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9F8DC324B49C4300183B7A /* CustomButton.swift in Sources */,
 				3B9F8D9E24B32B1D00183B7A /* AppDelegate.swift in Sources */,
 				3B9F8DB524B34AD900183B7A /* AxxessTech.swift in Sources */,
 				3B9F8DBA24B3824C00183B7A /* CustomCell.swift in Sources */,
@@ -321,6 +344,7 @@
 				3B9F8DA824B334C500183B7A /* AppConstant.swift in Sources */,
 				3B9F8DAB24B3381900183B7A /* ListingVC.swift in Sources */,
 				3B9F8DBD24B47F4B00183B7A /* CustomView.swift in Sources */,
+				3B9F8DC024B4994E00183B7A /* CustomLabel.swift in Sources */,
 				3B9F8DA524B3314C00183B7A /* AppDatabase.swift in Sources */,
 				3B9F8DA324B3313900183B7A /* DatabaseManager.swift in Sources */,
 				3B9F8DB724B34D8700183B7A /* AxxessTechApiManager.swift in Sources */,
