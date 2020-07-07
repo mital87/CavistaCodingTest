@@ -83,16 +83,36 @@ class ListingVC: UIViewController {
 
         self.view.backgroundColor = .systemBackground
         self.title = "Coding Test"
-                
-        DatabaseManager.getSharedWriteCurrentDatabase { (db) in
-            AxxessTech.truncateTable(db)
-        }
-        importDataForAxxessTechAPI()
         
+        fetchingSampleData()
     }
+    
+    //MARK: - UserDefine Methods
     
     @objc func btnCancelClicked() {
         imgViewer.isHidden = true
+    }
+    
+    fileprivate func fetchingSampleData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            if appDelegate.isNetworkAvailable {
+                DatabaseManager.getSharedWriteCurrentDatabase { (db) in
+                    AxxessTech.truncateTable(db)
+                }
+                self.importDataForAxxessTechAPI()
+            } else {
+                self.fetchDatafromDB()
+            }
+        }
+    }
+    
+    fileprivate func fetchDatafromDB() {
+        DatabaseManager.getSharedCurrentDatabase { (db) in
+            if let sampleData = AxxessTech.getSampleData(db) {
+                self.dataArray = sampleData
+                self.tblView.reloadData()
+            }
+        }
     }
 }
 
@@ -142,19 +162,12 @@ extension ListingVC : UITableViewDataSource, UITableViewDelegate  {
 
 //MARK:- Products Group API Manager
 extension ListingVC {
+    
     func importDataForAxxessTechAPI() {
-        
         AxxessTechApiManager.getSampleData { (error) in
-            
             if error == nil {
-                
-                DatabaseManager.getSharedCurrentDatabase { (db) in
-                    if let sampleData = AxxessTech.getSampleData(db) {
-                        self.dataArray = sampleData
-                        self.tblView.reloadData()
-                    }
-                }
                 debugPrint("AxxessTech Data imported.")
+                self.fetchDatafromDB()
             } else {
                 debugPrint(error.debugDescription)
             }

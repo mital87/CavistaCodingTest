@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var isNetworkAvailable: Bool = false
+    var reachability : Reachability!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -23,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         debugPrint(getDocumentsDirectory())
         
+        setupNetworkReachability()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let listingVC = ListingVC()
         listingVC.view.backgroundColor = .systemBackground
@@ -33,6 +38,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.makeKeyAndVisible()
         
         return true
+    }
+    
+    //MARK: - Setup Network Reachability
+    func setupNetworkReachability()
+    {
+        self.reachability = try! Reachability()
+        
+        self.reachability.whenReachable = { reachability in
+            self.isNetworkAvailable = true
+        }
+        self.reachability.whenUnreachable = { _ in
+            self.isNetworkAvailable = false
+        }
+        
+        do {
+            try self.reachability.startNotifier()
+        }
+        catch {
+            print("Unable to start notifier")
+        }
     }
 }
 
