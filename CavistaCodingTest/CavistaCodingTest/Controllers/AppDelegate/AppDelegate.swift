@@ -27,23 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let listingVC = ListingVC()
         listingVC.view.backgroundColor = .systemBackground
         let rootNC = UINavigationController(rootViewController: listingVC)
+        rootNC.navigationBar.prefersLargeTitles = true
+        rootNC.navigationItem.largeTitleDisplayMode = .always
         self.window?.rootViewController = rootNC
         self.window!.makeKeyAndVisible()
         
-        
-//        navController = UINavigationController()
-//        var viewController: ViewController = ViewController()
-//        self.navController!.pushViewController(viewController, animated: false)
-//
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//
-//        self.window!.rootViewController = navController
-//
-//        self.window!.backgroundColor = UIColor.whiteColor()
-//
-//        self.window!.makeKeyAndVisible()
-
-
         return true
     }
 }

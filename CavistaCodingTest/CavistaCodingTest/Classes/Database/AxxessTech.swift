@@ -60,4 +60,16 @@ extension AxxessTech{
             debugPrint("ERROR: AxxessTech NOT Truncated")
         }
     }
+    
+    static func getSampleData(_ db: Database, _ type: String) -> [AxxessTech]?{
+        do {
+            let sql = type.count > 0 ? "SELECT * FROM AxxessTech WHERE type = \(type)" : "SELECT * FROM AxxessTech"
+            let rows = try AxxessTech.fetchAll(db, sql: sql)
+            return rows
+        }
+        catch  {
+            debugPrint(error)
+            return nil
+        }
+    }
 }

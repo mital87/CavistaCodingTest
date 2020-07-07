@@ -18,6 +18,7 @@
 		3B9F8DB324B3494E00183B7A /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DB224B3494E00183B7A /* APIEndpoint.swift */; };
 		3B9F8DB524B34AD900183B7A /* AxxessTech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DB424B34AD900183B7A /* AxxessTech.swift */; };
 		3B9F8DB724B34D8700183B7A /* AxxessTechApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DB624B34D8700183B7A /* AxxessTechApiManager.swift */; };
+		3B9F8DBA24B3824C00183B7A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F8DB924B3824C00183B7A /* CustomCell.swift */; };
 		F5BB9118D104B7A4F16BDB41 /* Pods_CavistaCodingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9889DCBA7DB9E61BB469E2A9 /* Pods_CavistaCodingTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		3B9F8DB224B3494E00183B7A /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		3B9F8DB424B34AD900183B7A /* AxxessTech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxxessTech.swift; sourceTree = "<group>"; };
 		3B9F8DB624B34D8700183B7A /* AxxessTechApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxxessTechApiManager.swift; sourceTree = "<group>"; };
+		3B9F8DB924B3824C00183B7A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = CavistaCodingTest/Classes/Network/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		9889DCBA7DB9E61BB469E2A9 /* Pods_CavistaCodingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CavistaCodingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 		3B9F8D9724B32B1D00183B7A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3B9F8DB824B3821A00183B7A /* UITableViewCell */,
 				3B9F8DAF24B347EA00183B7A /* Network */,
 				3B9F8DA624B334AF00183B7A /* AppConstant */,
 				3B9F8DA124B3310300183B7A /* Database */,
@@ -159,6 +162,14 @@
 				3B9F8DB624B34D8700183B7A /* AxxessTechApiManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3B9F8DB824B3821A00183B7A /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F8DB924B3824C00183B7A /* CustomCell.swift */,
+			);
+			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		74EED8377A80091DA6837774 /* Pods */ = {
@@ -294,6 +305,7 @@
 			files = (
 				3B9F8D9E24B32B1D00183B7A /* AppDelegate.swift in Sources */,
 				3B9F8DB524B34AD900183B7A /* AxxessTech.swift in Sources */,
+				3B9F8DBA24B3824C00183B7A /* CustomCell.swift in Sources */,
 				3B9F8DB324B3494E00183B7A /* APIEndpoint.swift in Sources */,
 				3B9F8DA824B334C500183B7A /* AppConstant.swift in Sources */,
 				3B9F8DAB24B3381900183B7A /* ListingVC.swift in Sources */,
