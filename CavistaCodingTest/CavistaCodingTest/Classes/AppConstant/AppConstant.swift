@@ -41,6 +41,7 @@ struct FONTS {
     static let textHeavy = "AvenirNext-Heavy"
 }
 
+// Get Screen Size
 struct ScreenSize
 {
     static let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
@@ -49,6 +50,7 @@ struct ScreenSize
     static let SCREEN_MIN_LENGTH    = min(SCREEN_WIDTH, SCREEN_HEIGHT)
 }
 
+// Get Device Type
 struct DeviceType
 {
     static let IS_IPHONE            = UIDevice.current.userInterfaceIdiom == .phone

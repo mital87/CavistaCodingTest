@@ -61,9 +61,9 @@ extension AxxessTech{
         }
     }
     
-    static func getSampleData(_ db: Database) -> [AxxessTech]?{
+    static func getSampleData(_ db: Database,_ isAscending: Bool) -> [AxxessTech]?{
         do {
-            let sql = "SELECT * FROM AxxessTech ORDER BY type ASC"
+            let sql = "SELECT * FROM AxxessTech ORDER BY type \(isAscending ? "ASC" : "DESC")"
             let rows = try AxxessTech.fetchAll(db, sql: sql)
             return rows
         }

@@ -12,5 +12,6 @@ target 'CavistaCodingTest' do
   pod 'Kingfisher', '~> 5.14'
   pod 'GRDB.swift', '5.0.0-beta.6'
   pod 'ReachabilitySwift', '~> 5.0'
+  pod 'ProgressHUD', '~> 13.4'
 
 end

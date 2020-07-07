@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		016370F334DD542A12102A14 /* Pods-CavistaCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CavistaCodingTest.release.xcconfig"; path = "Target Support Files/Pods-CavistaCodingTest/Pods-CavistaCodingTest.release.xcconfig"; sourceTree = "<group>"; };
 		0192FBAC643C815AA7C1DA61 /* Pods-CavistaCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CavistaCodingTest.debug.xcconfig"; path = "Target Support Files/Pods-CavistaCodingTest/Pods-CavistaCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
-		3B9F8D7B24B32A6200183B7A /* CavistaCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CavistaCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B9F8D7B24B32A6200183B7A /* CodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9F8D8724B32A6500183B7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B9F8D8C24B32A6500183B7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9F8D9624B32B1D00183B7A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		3B9F8D7C24B32A6200183B7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B9F8D7B24B32A6200183B7A /* CavistaCodingTest.app */,
+				3B9F8D7B24B32A6200183B7A /* CodingTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			);
 			name = CavistaCodingTest;
 			productName = CavistaCodingTest;
-			productReference = 3B9F8D7B24B32A6200183B7A /* CavistaCodingTest.app */;
+			productReference = 3B9F8D7B24B32A6200183B7A /* CodingTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -481,8 +481,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CavistaCodingTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.CodingTest;
+				PRODUCT_NAME = CodingTest;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -500,8 +500,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CavistaCodingTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.CodingTest;
+				PRODUCT_NAME = CodingTest;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

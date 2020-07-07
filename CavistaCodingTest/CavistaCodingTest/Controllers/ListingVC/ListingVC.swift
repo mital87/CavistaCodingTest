@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import ProgressHUD
 
 class ListingVC: UIViewController {
 
@@ -74,16 +75,24 @@ class ListingVC: UIViewController {
         return imgView
     }()
         
-    
     var dataArray = [AxxessTech]()
+    var isAscending = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = Colors.appBGColor
         self.title = "Coding Test"
         
+        let btnSort = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortByType))
+        self.navigationItem.rightBarButtonItem  = btnSort
+        
         fetchingSampleData()
+    }
+    
+    @objc func sortByType() {
+        isAscending = !isAscending
+        fetchDatafromDB()
     }
     
     //MARK: - UserDefine Methods
@@ -107,7 +116,8 @@ class ListingVC: UIViewController {
     
     fileprivate func fetchDatafromDB() {
         DatabaseManager.getSharedCurrentDatabase { (db) in
-            if let sampleData = AxxessTech.getSampleData(db) {
+            if let sampleData = AxxessTech.getSampleData(db, self.isAscending) {
+                self.dataArray.removeAll()
                 self.dataArray = sampleData
                 self.tblView.reloadData()
             }
@@ -162,6 +172,11 @@ extension ListingVC : UITableViewDataSource, UITableViewDelegate  {
 extension ListingVC {
     
     func importDataForAxxessTechAPI() {
+        
+        ProgressHUD.animationType = .circleSpinFade
+        ProgressHUD.colorAnimation = Colors.appCancelBtnColor
+        ProgressHUD.show()
+        
         AxxessTechApiManager.getSampleData { (error) in
             if error == nil {
                 debugPrint("AxxessTech Data imported.")
@@ -169,6 +184,7 @@ extension ListingVC {
             } else {
                 debugPrint(error.debugDescription)
             }
+            ProgressHUD.dismiss()
         }
     }
 }

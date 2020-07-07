@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let listingVC = ListingVC()
-        listingVC.view.backgroundColor = .systemBackground
+        listingVC.view.backgroundColor = Colors.appBGColor
         let rootNC = UINavigationController(rootViewController: listingVC)
         rootNC.navigationBar.prefersLargeTitles = true
         rootNC.navigationItem.largeTitleDisplayMode = .always
